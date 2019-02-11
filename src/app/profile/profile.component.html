@@ -5,16 +5,16 @@
             </div>
             <table class="table col-md-6 mx-auto">
                 <tr>
-                    <td>First name</td>
-                    <td>{{details?.first_name}}</td>
+                    <td>Nom</td>
+                    <td>{{auth.getUserDetails()?.first_name}}</td>
                 </tr>
                 <tr>
-                    <td>Last name</td>
-                    <td>{{details?.last_name}}</td>
+                    <td>Prénom</td>
+                    <td>{{auth.getUserDetails()?.last_name}}</td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>{{details?.email}}</td>
+                    <td>{{auth.getUserDetails()?.email}}</td>
                 </tr>
             </table>
         </div>
