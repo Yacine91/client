@@ -10,12 +10,16 @@ import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
 import { HomeComponent } from './home/home.component'
 import { AuthenticationService } from './authentication.service'
-import { AuthGuardService } from './auth-guard.service'
+import { AuthGuardService } from './auth-guard.service';
+import { PrestationComponent } from './prestation/prestation.component';
+import { PictureComponent } from './picture/picture.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'prestation', component: PrestationComponent},
+  { path: 'picture', component: PictureComponent},
   { path: 'profile', 
     component: ProfileComponent,
     canActivate: [AuthGuardService]
@@ -29,7 +33,9 @@ const routes: Routes = [
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PrestationComponent,
+    PictureComponent
   ],
   imports: [
     BrowserModule,
