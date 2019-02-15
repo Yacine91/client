@@ -1,18 +1,20 @@
-<div class="container" style="margin-bottom: 17.7%">
-        <div class="row">
-            <div class="col-md-6 mt-5 mx-auto">
-                <form (submit)="login()">
-                    <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="" [(ngModel)]="credentials.email">
-                    </div>
-                    <div class="form-group">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" class="form-control" name="password" placeholder="" [(ngModel)]="credentials.password">
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-                </form>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-5 mx-auto">
+            <form #form="ngForm" (submit)="login()">
+                <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" #mailAction="ngModel" class="form-control" name="email" placeholder="Email" required [(ngModel)]="credentials.email">
+                </div>
+                <div [hidden] = "mailAction.valid" style="color:red"><p id="msg">Veuillez saisir votre Email</p></div>
+                <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" #passwordAction="ngModel" class="form-control" name="password" placeholder="Mot de passe" required [(ngModel)]="credentials.password">
+                </div>
+                <div [hidden] = "passwordAction.valid" style="color:red"><p id="msg">Veuillez saisir votre mot de passe</p></div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.form.valid">Connexion</button>
+            </form>
         </div>
     </div>
+</div>
