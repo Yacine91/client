@@ -1,10 +1,9 @@
-
 <div class="container">
-        <div class="jumbotron mt-5">
-            <div class="col-sm-8 mx-auto">
-                <h1 class="text-center">Profile</h1>
-            </div>
-            <table class="table col-md-6 mx-auto">
+    <div class="jumbotron mt-5">
+        <div class="col-sm-8 mx-auto">
+            <h3 class="text-center">Bonjour {{auth.getUserDetails()?.last_name}} chez ESIC Esthetique</h3>
+        </div>
+        <!--<table class="table col-md-6 mx-auto">
                 <tr>
                     <td>Nom</td>
                     <td>{{auth.getUserDetails()?.first_name}}</td>
@@ -17,7 +16,11 @@
                     <td>Email</td>
                     <td>{{auth.getUserDetails()?.email}}</td>
                 </tr>
-            </table>
-            <app-reserve> </app-reserve>
-        </div>
+            </table>-->
+
+
+    </div>
+    <div class="jumbotron mt-5">
+        <app-reserve> </app-reserve>
+    </div>
 </div>

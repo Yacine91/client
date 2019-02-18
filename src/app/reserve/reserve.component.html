@@ -1,54 +1,54 @@
-<div *ngIf="!isScheduleOk"> 
-    <form [formGroup]="reservationForm" (submit)="saveReservation()">
-      <h3>Date</h3>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
-      </mat-form-field>
-  
-      <h3>Heure</h3>
-      <mat-form-field>
-        <mat-select placeholder="heure" formControlName="time">
-          <mat-option *ngFor="let time of timeOptions" [value]="time">
-            {{time}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-  
-      <h3>Combien de personne</h3>
-      <mat-form-field>
-        <mat-select placeholder="Personne" formControlName="people">
-          <mat-option *ngFor="let people of peopleOptions" [value]="people">
-            {{people}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-button type="submit">Confirmer l'horaire</button>
-    </form>
-  </div>
-  
-  
-  <!--{{reservationForm.value | json}}-->
-  
-  <div *ngIf="isScheduleOk">
-    <form #f="ngForm" (submit)="finalizeReservation(f)">
-      <mat-form-field>
-        <input matInput type="text" name="first_name" [(ngModel)]="client.first_name" placeholder="Prénom">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput type="text" name="last_name" [(ngModel)]="client.last_name" placeholder="Nom">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput type="text" name="email" [(ngModel)]="client.email" placeholder="Email">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput type="number" name="phone" [(ngModel)]="client.phone" placeholder="Tel">
-      </mat-form-field>
-      <button mat-button type="submit">Réserver</button>
-    </form>
+<div class="container">
+  <div class="jumbotron mt-5">
+    <div class="col-sm-8 mx-auto">
+      <div *ngIf="!isScheduleOk">
+        <form [formGroup]="reservationForm" (submit)="saveReservation()">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="heure" formControlName="time">
+              <mat-option *ngFor="let time of timeOptions" [value]="time">
+                {{time}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Personne" formControlName="people">
+              <mat-option *ngFor="let people of peopleOptions" [value]="people">
+                {{people}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button class="btn btn-success" type="submit">Confirmer l'horaire</button>
+        </form>
+      </div>
+
+
+      <!--{{reservationForm.value | json}}-->
+
+      <!--<div *ngIf="isScheduleOk">
+        <form #f="ngForm" (submit)="finalizeReservation(f)">
+          <mat-form-field>
+            <input matInput type="text" name="first_name" [(ngModel)]="client.first_name" placeholder="Prénom">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" name="last_name" [(ngModel)]="client.last_name" placeholder="Nom">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" name="email" [(ngModel)]="client.email" placeholder="Email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" name="phone" [(ngModel)]="client.phone" placeholder="Tel">
+          </mat-form-field>
+          <button mat-button type="submit">Réserver</button>
+        </form>
+      </div>-->
     </div>
-    
-  
-  
-  <!--{{f.controls.first_name?.value}}-->
+  </div>
+</div>
+
+
+<!--{{f.controls.first_name?.value}}-->
